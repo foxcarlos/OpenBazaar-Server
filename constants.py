@@ -190,12 +190,13 @@ else:
                 errorInSeed = True
                 if len(s) == 2:
                     seed, key = s
-                    if ':' in seed:
-                        url, port = seed.split(':')
-                        if url and port:
-                            if key:
-                                goodSeeds.append(s)
-                                errorInSeed = False
+                    # no is necesary url:port
+                    # if ':' in seed:
+                    # url, port = seed.split(':')
+                    # if url and port:
+                    if seed and key:
+                        goodSeeds.append(s)
+                        errorInSeed = False
                 if errorInSeed:
                     print logError.format(s)
         else:
